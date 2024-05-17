@@ -18,4 +18,5 @@ Creating this model required a circuit discretization process using methods such
 Thank you!
 
 Best,
+
 Sohyun
