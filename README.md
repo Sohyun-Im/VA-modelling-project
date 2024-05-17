@@ -1,6 +1,7 @@
 This project aims to digitally replicate the electrical behavior of the MXR Distortion+ guitar pedal circuit.
 
 **MATLAB Folder** 
+
 The Matlab folder contains Matlab scripts based on the transfer function derived from the circuit discretization, and audio samples used as input signals in wave file format.
 
 **How to Use the Matlab Scripts**
