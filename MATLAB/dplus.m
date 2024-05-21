@@ -22,7 +22,7 @@ R8 = 1e6;
 
 % "Distortion" RV-POT position from 0 to 1
 % 1-Mega Ohm reverse-log pot
-pot = 1; % from 0 to 1
+pot = 0.9; % from 0 to 1
 k = 6; % sensitivity factor of the reverse-log pot
 R6 = (exp(-k * pot) - exp(-k)) / (1 - exp(-k)) * 1000000; 
 Rn = R5 + R6; % from 4.7k + 0  to  4.7k + 1Meg
@@ -73,7 +73,7 @@ end
 % clipping stage
 
 % Germanium Diode parameters
-Is = 10e-6; % saturation current 
+Is = 100e-9; % saturation current 
 Vt = 0.026; % thermal voltage
 eta = 2;% emission coefficient
 
@@ -83,7 +83,7 @@ Ca = 1e-9;
 Ra = Ts/(2*Ca);
 
 % "OUTPUT" POT position from 0 to 0.99
-outputpot = 0.9; 
+outputpot = 0.76; 
 
 Re = 10000 * (1 - log10(1 + 9 * (1 - outputpot)));
 Rd = 10000 - Re;
@@ -109,7 +109,7 @@ for n = 1:N
     count=0;
 
     % a nested loop to find the Vd value for each input 
-    while((abs(fVd) > TOL) && (count<5))  
+    while((abs(fVd) > TOL) && (count<10))  
 
 
         der = ((2*Is/(eta*Vt)) * cosh(Vd/(eta*Vt))) + (1/Ra) + (1/Rb) + (1/Rd);
