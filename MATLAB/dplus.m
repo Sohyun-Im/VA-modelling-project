@@ -14,7 +14,7 @@ R1 = Ts/(2*C1);
 
 C2 = 47e-9;
 R2 = Ts/(2*C2);
-
+  
 R3 = 10e3; 
 R4 = 1e6;
 R5 = 4.7e3;
@@ -22,8 +22,8 @@ R8 = 1e6;
 
 % "Distortion" RV-POT position from 0 to 1
 % 1-Mega Ohm reverse-log pot
-pot = 0.9; % from 0 to 1
-k = 6; % sensitivity factor of the reverse-log pot
+pot = 0.75; % from 0 to 1
+k = 8; % sensitivity factor of the reverse-log pot
 R6 = (exp(-k * pot) - exp(-k)) / (1 - exp(-k)) * 1000000; 
 Rn = R5 + R6; % from 4.7k + 0  to  4.7k + 1Meg
 
